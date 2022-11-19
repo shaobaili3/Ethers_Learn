@@ -15,7 +15,7 @@ const contract = new ethers.Contract(addressUSDT, abiERC20, provider)
 
 const listenContract = async () => {
     const balanceUSDT = await contract.balanceOf(WALLET_BINANCE)
-    console.log(`USDT余额: ${ethers.utils.formatUnits(ethers.BigNumber.from(balanceUSDT),6)}\n`)
+    console.log(`USDT余额: ${ethers.utils.formatUnits(balanceUSDT,6)}\n`)
     console.log("\n2. 创建过滤器，监听转移USDT进交易所")
     let filterBinanceIn = contract.filters.Transfer(null, WALLET_BINANCE);
     console.log("过滤器详情：")
