@@ -9,6 +9,13 @@ console.log(hdNode);
 const numWallet = 20
 // 派生路径：m / purpose' / coin_type' / account' / change / address_index
 // 我们只需要切换最后一位address_index，就可以从hdNode派生出新钱包
+// m: 固定为"m"
+// purpose：固定为"44"
+// coin_type：代币类型，比特币主网为0，比特币测试网为1，以太坊主网为60
+// account：账户索引，从0开始。
+// change：是否为外部链，0为外部链，1为内部链，一般填0.
+// address_index：地址索引，从0开始，想生成新地址就把这里改为1，2，3。
+// 举个例子，以太坊的默认衍生路径为"m/44'/60'/0'/0/0"。
 let basePath = "m/44'/60'/0'/0";
 let wallets = [];
 for (let i = 0; i < numWallet; i++) {
