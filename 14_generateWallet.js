@@ -38,6 +38,7 @@ const calldata = async () => {
     const wallet2 = await ethers.Wallet.fromEncryptedJson(json, pwd);
     console.log("\n4. 从加密json读取钱包：")
     console.log(wallet2)
+    console.log("钱包信息: ", wallet2.mnemonic, wallet2.privateKey, wallet2.address)
 }
 
 calldata()
